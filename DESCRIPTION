@@ -1,0 +1,16 @@
+Package: lothianBuses
+Title: Access Transport for Edinburgh API data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Nick",
+           family = "Fanton",
+           role = c("aut", "cre"),
+           email = "nfanton@icloud.com")
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    magrittr
