@@ -2,5 +2,5 @@
 
 export("%>%")
 export(get_stops)
-export(list_services)
+export(list_routes)
 importFrom(magrittr,"%>%")

@@ -1,4 +1,4 @@
-#' List all TFE services
+#' List all TFE routes
 #'
 #' Lists all Lothian Buses, Airlink, Skylink,
 #' Lothian Country, East Coast Buses, Nightbus,
@@ -7,8 +7,8 @@
 #' @return A tibble
 #' @export
 #'
-#' @examples list_services()
-list_services <- function(){
+#' @examples list_routes()
+list_routes <- function(){
   httr::GET(url = "https://tfe-opendata.com/api/v1/services") %>%
     httr::content(as = "text", encoding = "UTF-8") %>%
     jsonlite::fromJSON(flatten = TRUE) %>%
