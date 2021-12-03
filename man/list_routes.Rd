@@ -4,7 +4,11 @@
 \alias{list_routes}
 \title{List all TFE routes}
 \usage{
-list_routes()
+list_routes(.details = FALSE)
+}
+\arguments{
+\item{.details}{Show route details?
+These are nested as lists within the tibble.}
 }
 \value{
 A tibble
