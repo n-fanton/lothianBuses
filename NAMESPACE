@@ -3,4 +3,5 @@
 export("%>%")
 export(get_stops)
 export(list_routes)
+export(live_departures)
 importFrom(magrittr,"%>%")
