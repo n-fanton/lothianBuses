@@ -4,7 +4,12 @@
 \alias{live_departures}
 \title{Get TfE live departures}
 \usage{
-live_departures(stop_code, api = "https://tfe-opendata.com/api/", version = 1)
+live_departures(
+  stop_code,
+  api = "https://tfe-opendata.com/api/",
+  version = 1,
+  show_bus = FALSE
+)
 }
 \arguments{
 \item{stop_code}{SMS code for bus stop or vector of SMS codes}
