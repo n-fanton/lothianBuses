@@ -13,4 +13,9 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
-    magrittr
+    magrittr,
+    janitor,
+    httr,
+    jsonlite,
+    dplyr,
+    tibble
