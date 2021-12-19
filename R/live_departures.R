@@ -29,17 +29,23 @@ live_departures = function(stop_code,
 
     url_for_this_stop <- paste0(stop_url, stop_code[i])
 
-    this_stop_departures <-
-      httr::GET(url = url_for_this_stop) %>%
-      httr::content(as = "text", encoding = "UTF-8") %>%
-      jsonlite::fromJSON(flatten = TRUE) %>%
-      magrittr::extract2(2) %>%
-      dplyr::bind_rows() %>%
-      tibble::as_tibble() %>%
-      janitor::clean_names()
+    web_return <- httr::GET(url = url_for_this_stop) %>%
+      httr::content(as = "text", encoding = "UTF-8")
 
-    all_stops_departures <- all_stops_departures %>%
-      dplyr::bind_rows(this_stop_departures)
+    if (web_return == "null") {
+      # Do nothing
+    } else {
+      this_stop_departures <- web_return  %>%
+        jsonlite::fromJSON(flatten = TRUE) %>%
+        magrittr::extract2(2) %>%
+        dplyr::bind_rows() %>%
+        tibble::as_tibble() %>%
+        janitor::clean_names()
+
+      all_stops_departures <- all_stops_departures %>%
+        dplyr::bind_rows(this_stop_departures)
+    }
+
   }
 
   return(all_stops_departures)
