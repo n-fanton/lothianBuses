@@ -19,6 +19,5 @@ list_routes <- function(.details = FALSE){
     tibble::as_tibble() %>%
     janitor::clean_names() %>%
     {if (!.details) dplyr::select(.data = ., name, description, service_type)
-      else . } %>% View()
-
+      else . }
 }
